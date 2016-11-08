@@ -1,0 +1,17 @@
+#!/bin/bash
+
+mkdir -p tests
+
+pidfile=tests/phantomjs.pid
+
+[ -e $pidfile ] && echo "PhantomJS started. phantomjs.pid exists. Run npm run phantom-stop or remove the file.";
+
+echo "Starting PhantomJS WebDriver on port 4444"
+echo "phantomjs --webdriver=4444 --ignore-ssl-errors=true --web-security=false >> phantomjs.log &"
+phantomjs --webdriver=4444 --debug=false --ignore-ssl-errors=true --web-security=false >tests/phantomjs.log 2>&1 &
+pid=$!
+
+echo $pid > $pidfile
+
+echo "... Waiting a bit for PhantomJS to start ..."
+sleep 5

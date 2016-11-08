@@ -1,0 +1,27 @@
+{
+  "name": "codecept-starter",
+  "version": "1.0.0",
+  "description": "Starter project for codecept end-to-end testing",
+  "main": "index.js",
+  "scripts": {
+    "pretest:e2e": "sh ./bin/phantom-start",
+    "test:e2e": "cross-env MOCHA_FILE=./output/smoke-results.xml multi=\"spec=- mocha-junit-reporter=-\" codeceptjs run --steps --recursive --reporter mocha-multi",
+    "posttest:e2e": "sh ./bin/phantom-stop",
+    "test:e2e:production": "cross-env NODE_ENV=production npm run test:e2e"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.21.0"
+  },
+  "devDependencies": {
+    "codeceptjs": "^0.4.8",
+    "cross-env": "^3.1.3",
+    "mocha-junit-reporter": "^1.12.1",
+    "mocha-multi": "^0.9.1",
+    "nightmare": "^2.8.1",
+    "nightmare-upload": "^0.1.1",
+    "phantomjs-prebuilt": "^2.1.13",
+    "webdriverio": "^4.2.16"
+  }
+}
