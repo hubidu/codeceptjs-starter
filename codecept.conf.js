@@ -31,5 +31,5 @@ exports.config = {
   },
   "mocha": {},
   "bootstrap": false,
-  "name": "veve.contract-request-app"
+  "name": "codeceptjs-starter"
 }
