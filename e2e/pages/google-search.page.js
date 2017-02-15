@@ -12,11 +12,12 @@ module.exports = {
 
   enter(text) {
     I.fillField('q', text);
-    I.click('button.lsb');
+    I.pressKey('Enter');
   },
 
   showsCodeceptAsFirstResult() {
-    I.waitForElement('#rso');
-    I.see('CodeceptJS', '#rso > div > div:nth-child(1) > div > h3')
+    I.waitForElement('.med')
+    I.waitForElement('#res .med')
+    I.waitForText('CodeceptJS');
   }
 }

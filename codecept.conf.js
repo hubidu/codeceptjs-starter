@@ -9,7 +9,7 @@ exports.config = {
       "url": config.url,
       "waitForTimeout": 20000,
       "browser": "phantom"
-    }
+    },
 
     /**
      * Someday I would like to use nightmare
@@ -24,12 +24,15 @@ exports.config = {
     }
     */
 
+    "RESTHelper": {
+      "require": "./e2e/helpers/rest.helper.js"
+    }
   },
   "include": {
     "I": "./e2e/custom.steps.js",
-    "googleSearchPage": "./e2e/pages/google-search.page.js",
+    "googleSearchPage": "./e2e/pages/google-search.page.js"
   },
   "mocha": {},
   "bootstrap": false,
-  "name": "codeceptjs-starter"
+  "name": "CodeceptJS Test Suite"
 }
