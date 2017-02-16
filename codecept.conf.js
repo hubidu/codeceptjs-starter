@@ -26,6 +26,9 @@ exports.config = {
 
     "RESTHelper": {
       "require": "./e2e/helpers/rest.helper.js"
+    },
+    "CookieHelper": {
+      "require": "./e2e/helpers/cookie.helper.js"
     }
   },
   "include": {
